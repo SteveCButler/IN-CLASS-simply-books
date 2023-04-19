@@ -48,27 +48,56 @@ function AddAuthorForm({ obj }) {
   return (
     <Form className="text-white-50" onSubmit={handleSubmit}>
       <h2 className="text-white mt-5">{obj.firebaseKey ? 'Update' : 'Create'} Author</h2>
+
+      {/* First Name INPUT  */}
       <Form.Group className="mb-3" controlId="formFirstName">
         <Form.Label>First Name</Form.Label>
-        <Form.Control type="text" value={formInput.first_name} placeholder="First Name" name="first_name" onChange={handleChange} required />
+        <Form.Control
+          type="text"
+          value={formInput.first_name}
+          placeholder="First Name"
+          name="first_name"
+          onChange={handleChange}
+          required
+        />
       </Form.Group>
+
+      {/* Last Name INPUT  */}
       <Form.Group className="mb-3" controlId="formLastName">
         <Form.Label>Last Name</Form.Label>
-        <Form.Control type="text" placeholder="Last Name" value={formInput.last_name} name="last_name" onChange={handleChange} required />
+        <Form.Control
+          type="text"
+          placeholder="Last Name"
+          value={formInput.last_name}
+          name="last_name"
+          onChange={handleChange}
+          required
+        />
       </Form.Group>
-      {/* <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Email address</Form.Label>
-        <Form.Control type="email" placeholder="Enter email" value={formInput.email} name="email" onChange={handleChange} />
-      </Form.Group> */}
 
+      {/* Email INPUT  */}
       <Form.Group controlId="formBasicEmail" className="mb-3">
         <Form.Label>Email</Form.Label>
-        <Form.Control type="text" placeholder="Enter Author Email" name="email" value={formInput.email} onChange={handleChange} />
+        <Form.Control
+          type="text"
+          placeholder="Enter Author Email"
+          name="email"
+          value={formInput.email}
+          onChange={handleChange}
+          required
+        />
       </Form.Group>
 
+      {/* Checkbox INPUT  */}
       <Form.Group className="mb-3" controlId="formBasicCheckbox">
-        <Form.Check type="checkbox" name="checked" label="Favorite" checked={formInput.favorite} />
+        <Form.Check
+          type="checkbox"
+          name="checked"
+          label="Favorite"
+          checked={formInput.favorite}
+        />
       </Form.Group>
+
       <Button variant="primary" type="submit">
         Submit
       </Button>
