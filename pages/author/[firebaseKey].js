@@ -16,7 +16,8 @@ export default function ViewAuthor() {
   return (
     <>
       <div className="text-white-50 pt-4">
-        <h1>{authorDetails.first_name === undefined ? null : `${authorDetails.first_name} ${authorDetails.last_name}`}</h1>
+        {/* <h1>{authorDetails.first_name === undefined ? null : `${authorDetails.first_name} ${authorDetails.last_name}`}</h1> */}
+        <h1>{authorDetails.first_name} {authorDetails.last_name}</h1>
         <p>{authorDetails.email}</p>
       </div>
       <div className="d-flex flex-wrap">
