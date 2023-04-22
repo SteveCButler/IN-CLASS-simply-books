@@ -19,7 +19,6 @@ function AddAuthorForm({ obj }) {
   const router = useRouter();
 
   useEffect(() => {
-    // getAuthors(user.uid).then(setAuthors);
     if (obj.firebaseKey) {
       setFormInput(obj);
     }

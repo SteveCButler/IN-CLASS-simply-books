@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar } from '@fortawesome/free-solid-svg-icons';
+import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { deleteAuthorBooks } from '../api/mergedData';
 
 function AuthorCard({ authorObj, onUpdate }) {
@@ -19,7 +19,9 @@ function AuthorCard({ authorObj, onUpdate }) {
       <Card.Body>
         <Card.Title>{`${authorObj.first_name} ${authorObj.last_name}`}</Card.Title>
         <p className="card-text bold">{authorObj.email}</p>
-        {authorObj.favorite && <FontAwesomeIcon icon={faStar} />}
+        {authorObj.favorite && <FontAwesomeIcon className="star" icon={faHeart} />}
+      </Card.Body>
+      <Card.Footer>
         {/* DYNAMIC LINK TO VIEW THE BOOK DETAILS  */}
         <Link href={`/author/${authorObj.firebaseKey}`} passHref>
           <Button variant="primary" className="m-2 btn-sm">
@@ -35,7 +37,7 @@ function AuthorCard({ authorObj, onUpdate }) {
         <Button variant="danger" className="m-2 btn-sm" onClick={deleteThisAuthor}>
           DELETE
         </Button>
-      </Card.Body>
+      </Card.Footer>
     </Card>
   );
 }

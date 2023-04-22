@@ -18,9 +18,10 @@ function BookCard({ bookObj, onUpdate }) {
     <Card style={{ width: '18rem', margin: '10px' }}>
       <Card.Img variant="top" src={bookObj.image} alt={bookObj.title} style={{ height: '400px' }} />
       <Card.Body>
-        <Card.Title>{bookObj.title}</Card.Title>
+        <Card.Title className="fs-5">{bookObj.title}</Card.Title>
         <p className="card-text bold">{bookObj.sale && <span>SALE<br /></span> } ${bookObj.price}</p>
-
+      </Card.Body>
+      <Card.Footer>
         {/* DYNAMIC LINK TO VIEW THE BOOK DETAILS  */}
         <Link href={`/book/${bookObj.firebaseKey}`} passHref>
           <Button variant="primary" className="m-2 btn-sm">VIEW</Button>
@@ -32,8 +33,8 @@ function BookCard({ bookObj, onUpdate }) {
         <Button variant="danger" onClick={deleteThisBook} className="m-2 btn-sm">
           DELETE
         </Button>
+      </Card.Footer>
 
-      </Card.Body>
     </Card>
   );
 }
